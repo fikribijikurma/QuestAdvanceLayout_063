@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,11 +23,18 @@ fun ActivitasPertama(modifier: Modifier){
         .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = stringResource(id = R.string.prodi),
+        Text(stringResource(R.string.prodi),
             fontSize = 35.sp,
             fontWeight = FontWeight.Bold)
-        Text(text = stringResource(id = R.string.univ),
+        Text(stringResource(R.string.univ),
             fontSize = 22.sp)
-        Spacer(modifier = Modifier.height(height = 25.dp))
+        Spacer(modifier = Modifier.height(25.dp))
+        Card (modifier = Modifier
+            .fillMaxSize(1f)
+            .padding(12.dp),
+            colors = CardDefaults.cardColors(
+
+            )
+            )
     }
 }
