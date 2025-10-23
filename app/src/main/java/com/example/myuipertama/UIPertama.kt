@@ -1,6 +1,7 @@
 package com.example.myuipertama
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,13 +44,22 @@ fun ActivitasPertama(modifier: Modifier){
             colors = CardDefaults.cardColors(
                 containerColor = Color.DarkGray
             )) {
+            Row (){
+                Row(
+                    modifier = Modifier.padding(5.dp),
+                    horizontalArrangement = Arrangement.Start,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
                 val gambar = painterResource(R.drawable.logo_umy)
-                Image(
-                    painter = gambar,
-                    contenDescription = null,
-                    modifier = Modifier.size(100.dp).padding(5.dp)
-                )
-            Spacer(modifier = modifier.width(30.dp))
+                    Image(
+                        painter = painterResource(R.drawable.logo_umy),
+                        contentDescription = stringResource(R.string.logo_universitas_description), // 4. Diperbaiki: Nama resource yang valid
+                        modifier = Modifier
+                            .size(100.dp)
+                            .padding(end = 16.dp) // Mengganti Spacer dengan padding
+                    )
+                    Spacer(modifier = modifier.width(30.dp))
             Column() {
                 Text(
                     stringResource(R.string.nama),
@@ -73,6 +83,7 @@ fun ActivitasPertama(modifier: Modifier){
                     .align(Alignment.BottomCenter)
                     .padding(bottom = 60.dp)
                 )
+
             }
         }
     }
